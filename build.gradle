@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+id 'war'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+    implementation 'org.glassfish.jersey:jersey-bom:2.27'
+    implementation 'javax.ws.rs:javax.ws.rs-api:2.1'
+    implementation 'org.glassfish.jersey.core:jersey-server:2.27'
+    implementation 'org.glassfish.jersey.inject:jersey-hk2:2.27'
+    implementation 'org.glassfish.jersey.containers:jersey-container-grizzly2-http:2.27'
+    implementation 'org.glassfish.grizzly:grizzly-http-server:2.4.3'
+
+    implementation "jakarta.xml.bind:jakarta.xml.bind-api:2.3.2"
+    implementation "org.glassfish.jaxb:jaxb-runtime:2.3.2"
+}
+
+test {
+    useJUnitPlatform()
+}
